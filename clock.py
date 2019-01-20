@@ -22,9 +22,9 @@ class RunText(SampleBase):
         font = graphics.Font()
         font_time = graphics.Font()
         #font.LoadFont("../../../fonts/mplus_h12r.bdf")
-        font_time.LoadFont("../../../fonts/21-Adobe-Helvetica.bdf")
+        font_time.LoadFont("./fonts/21-Adobe-Helvetica.bdf")
         #font.LoadFont("../../../fonts/15-Adobe-Helvetica.bdf")
-        font.LoadFont("../../../fonts/16-Adobe-Helvetica-Bold.bdf")
+        font.LoadFont("./fonts/16-Adobe-Helvetica-Bold.bdf")
 
         textColor = graphics.Color(245, 0, 111)
         timeColor = graphics.Color(61, 147, 215)
