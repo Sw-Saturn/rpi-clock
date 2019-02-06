@@ -28,7 +28,6 @@ class ImageScroller(SampleBase):
         textColor = graphics.Color(245, 0, 111)
         timeColor = graphics.Color(61, 147, 215)
         pos = double_buffer.width
-        my_text = self.args.text
 
         # let's scroll
         xpos = -128
@@ -39,8 +38,10 @@ class ImageScroller(SampleBase):
             d = datetime.now()
             h = (" " + str(d.hour))[-2:]
             time_text = d.strftime("%H:%M:%S")
+            
+            double_buffer.Clear()
             # len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
-            len1 = graphics.DrawText(double_buffer, font_time, 14, 30, timeColor, time_text)
+            #len1 = graphics.DrawText(double_buffer, font_time, 14, 30, timeColor, time_text)
 
             double_buffer.SetImage(self.image, -xpos)
             #double_buffer.SetImage(self.image, -xpos + img_width)
