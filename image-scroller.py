@@ -20,7 +20,7 @@ class ImageScroller(SampleBase):
         # let's scroll
         xpos = -128
         while True:
-            xpos += 4
+            xpos += 2
             if (xpos > img_width):
                 exit()
 
@@ -28,7 +28,7 @@ class ImageScroller(SampleBase):
             #double_buffer.SetImage(self.image, -xpos + img_width)
 
             double_buffer = self.matrix.SwapOnVSync(double_buffer)
-            #time.sleep(0.0005)
+            time.sleep(0.0005)
 
 # Main function
 # e.g. call with

@@ -29,5 +29,6 @@ if __name__ == '__main__':
             twText = tweet['user']['name']+' @'+tweet['user']['screen_name']+' '+tweet['text']+' '
             twText = re.sub('\n', " ", twText)
             twText=re.sub(r'https?://[\w/:%#\$&\?\(\)~\.=\+\-…]+', "", twText)
-            subprocess.call('sudo convert -background none +antialias -fill "#b09bd1" -font /usr/share/fonts/opentype/A-OTF-ShinGoPro-Regular.otf -pointsize 28 -gravity north label:"{0}" /home/pi/rpi-clock/tw.png'.format(twText),shell=True)
+            subprocess.call('sudo convert -background none +antialias -fill "#b09bd1" -font /usr/share/fonts/opentype/A-OTF-ShinGoPro-Regular.otf -pointsize 16 -gravity north label:"{0}" /home/pi/rpi-clock/tw.png'.format(twText),shell=True)
+            #subprocess.call('sudo convert -background none +antialias -fill "#b09bd1" -font /usr/share/fonts/opentype/A-OTF-ShinGoPro-Regular.otf -pointsize 28 -gravity north label:"{0}" /home/pi/rpi-clock/tw.png'.format(twText),shell=True)
             subprocess.call('sudo python3 image-scroller.py --led-no-hardware-pulse 1 --led-chain=4 -i tw.png -b 80',shell=True)
