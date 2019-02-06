@@ -30,21 +30,21 @@ class RunText(SampleBase):
         timeColor = graphics.Color(61, 147, 215)
         pos = offscreen_canvas.width
         my_text = self.args.text
- 
+        
         while True:
             d = datetime.now()
             h = (" " + str(d.hour))[-2:]
             #スペースを頭に着けて最後から2文字背取得。1-9時の間も真ん中に時計が表示されるようにする考慮
             date_text = d.strftime("%a %b %d %Y")
-            time_text = d.strftime("%r")
-            #logger.debug(my_text)
+            time_text = d.strftime("%H:%M")
+            #logger.debug(my_text) 
             offscreen_canvas.Clear()
             #len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
             len1 = graphics.DrawText(offscreen_canvas, font_time, 14, 30, timeColor, time_text)
  
-            #time.sleep(0.01)
+            #time.sleep(60)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
- 
+            #time.sleep(60)
  
 # Main function
 if __name__ == "__main__":
