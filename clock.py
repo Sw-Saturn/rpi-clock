@@ -39,10 +39,10 @@ class RunText(SampleBase):
             time_text = d.strftime("%r")
             #logger.debug(my_text)
             offscreen_canvas.Clear()
-            len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
+            #len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
             len1 = graphics.DrawText(offscreen_canvas, font_time, 14, 30, timeColor, time_text)
  
-            time.sleep(0.01)
+            #time.sleep(0.01)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
  
  
