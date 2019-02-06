@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import time
 from samplebase import SampleBase
+from rgbmatrix import graphics
+from datetime import datetime
 from PIL import Image
 
 
@@ -16,6 +18,17 @@ class ImageScroller(SampleBase):
 
         double_buffer = self.matrix.CreateFrameCanvas()
         img_width, img_height = self.image.size
+        font = graphics.Font()
+        font_time = graphics.Font()
+        # font.LoadFont("../../../fonts/mplus_h12r.bdf")
+        font_time.LoadFont("./fonts/21-Adobe-Helvetica.bdf")
+        # font.LoadFont("../../../fonts/15-Adobe-Helvetica.bdf")
+        font.LoadFont("./fonts/16-Adobe-Helvetica-Bold.bdf")
+
+        textColor = graphics.Color(245, 0, 111)
+        timeColor = graphics.Color(61, 147, 215)
+        pos = double_buffer.width
+        my_text = self.args.text
 
         # let's scroll
         xpos = -128
@@ -23,6 +36,11 @@ class ImageScroller(SampleBase):
             xpos += 2
             if (xpos > img_width):
                 exit()
+            d = datetime.now()
+            h = (" " + str(d.hour))[-2:]
+            time_text = d.strftime("%H:%M:%S")
+            # len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
+            len1 = graphics.DrawText(double_buffer, font_time, 14, 30, timeColor, time_text)
 
             double_buffer.SetImage(self.image, -xpos)
             #double_buffer.SetImage(self.image, -xpos + img_width)
