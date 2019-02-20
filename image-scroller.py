@@ -14,7 +14,7 @@ class ImageScroller(SampleBase):
     def run(self):
         if not 'image' in self.__dict__:
             self.image = Image.open(self.args.image).convert('RGB')
-        self.image.resize((self.matrix.width, self.matrix.height))
+        self.image.resize((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
         double_buffer = self.matrix.CreateFrameCanvas()
         img_width, img_height = self.image.size
@@ -47,7 +47,7 @@ class ImageScroller(SampleBase):
             #double_buffer.SetImage(self.image, -xpos + img_width)
 
             double_buffer = self.matrix.SwapOnVSync(double_buffer)
-            time.sleep(0.0005)
+            time.sleep(0.02)
 
 # Main function
 # e.g. call with

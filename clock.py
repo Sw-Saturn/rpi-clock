@@ -35,12 +35,13 @@ class RunText(SampleBase):
             d = datetime.now()
             h = (" " + str(d.hour))[-2:]
             #スペースを頭に着けて最後から2文字背取得。1-9時の間も真ん中に時計が表示されるようにする考慮
-            date_text = d.strftime("%a %b %d %Y")
+            #date_text = d.strftime("%a %b %d %Y")
+            date_text = d.strftime("%a %m-%d")
             time_text = d.strftime("%H:%M")
             #logger.debug(my_text) 
             offscreen_canvas.Clear()
-            #len = graphics.DrawText(offscreen_canvas, font, 4, 12, textColor, date_text)
-            len1 = graphics.DrawText(offscreen_canvas, font_time, 14, 30, timeColor, time_text)
+            len = graphics.DrawText(offscreen_canvas, font, 0, 14, textColor, date_text)
+            len1 = graphics.DrawText(offscreen_canvas, font_time,7, 30, timeColor, time_text)
  
             #time.sleep(60)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
