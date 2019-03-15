@@ -36,7 +36,7 @@ class RunText(SampleBase):
             h = (" " + str(d.hour))[-2:]
             #スペースを頭に着けて最後から2文字背取得。1-9時の間も真ん中に時計が表示されるようにする考慮
             #date_text = d.strftime("%a %b %d %Y")
-            date_text = d.strftime("%a %m-%d")
+            date_text = d.strftime("%a %m.%d")
             time_text = d.strftime("%H:%M")
             #logger.debug(my_text) 
             offscreen_canvas.Clear()
